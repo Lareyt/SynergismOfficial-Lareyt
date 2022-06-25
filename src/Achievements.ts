@@ -528,10 +528,10 @@ export const achievementAlerts = async (num: number) => {
             text = 'Hmm, it seems you are getting richer, being able to get 1 Googol diamonds in a single Prestige. How about we give you another Rune? [Unlocked Duplication Rune in Runes tab!]'
             break;
         case 255:
-            text = 'Wow! You gained 1e17 (100 Quadrillion) score in a single Ascension. For that, you can now generate Hepteracts if you get above 1.66e17 (166.6 Quadrillion) score in an Ascension. Good luck!'
+            text = 'Wow! You gained 1e17 (100 Quadrillion) score in a single Ascension. For that, you can now generate Hepteracts if you get above 1.66e17 (166.6 Quadrillion) score in an Ascension. Good luck! ${player.challenge15Exponent >= 1e15 ? '' : '(Hint: You need to increase your Challenge 15 Exponent to make Hepteracts useful.)'}'
     }
 
-    if (text !== '' && player.singularityCount === 0) {
+    if (text !== '') {
         return Alert(text)
     }
 }
